@@ -1,0 +1,266 @@
+<html lang="en">
+
+<head>
+    <title>Baoshuo's Site</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css">
+    <link rel="stylesheet" href="assets/css/main.c298ea1e.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script>
+        console.log(`%c  Baoshuo's Site  %c  https://baoshuo.ren/\n\n%c  Baoshuo's Blog  %c  https://baoshuo.blog/\n\n`, "color:#eee;background:#444;padding:5px 0;", "", "color:#eee;background:#444;padding:5px 0;", "");
+    </script>
+</head>
+
+<body
+    class="mdui-theme-layout-auto mdui-theme-primary-light-blue mdui-theme-accent-blue mdui-appbar-with-tab-larger mdui-appbar-with-toolbar">
+    <style>
+        a {
+            color: #03A9F4;
+        }
+
+        .mdui-card-content a {
+            text-decoration: none;
+            font-size: 90%;
+        }
+
+        .mdui-card-content a:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 600px) {
+            .mdui-col-md-center {
+                margin-left: calc(16.6666666667% + 8px);
+            }
+        }
+
+        /* @media (min-width: 1024px) {
+            .github-stats-info {
+                width: 58%;
+                max-width: 58%;
+                min-width: 58%;
+                display: inline !important;
+            }
+
+            .github-lang {
+                width: 40%;
+                max-width: 40%;
+                min-width: 40%;
+                display: inline !important;
+                margin: 0px;
+            }
+        } */
+    </style>
+
+    <header class="mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar mdui-color-theme">
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+            <a href="javascript:;" class="mdui-typo-title">Baoshuo's Site</a>
+            <div class="mdui-toolbar-spacer"></div>
+            <a href="javascript:changeTheme();" class="mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">brightness_4</i>
+            </a>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon">
+                <i class="mdui-icon material-icons">more_vert</i>
+            </a>
+        </div>
+        <div class="mdui-tab mdui-color-theme mdui-tab-centered" style="height: inherit;" mdui-tab>
+            <a href="#home" class="mdui-ripple mdui-ripple-white mdui-tab-active">Home</a>
+            <a href="#blog" class="mdui-ripple mdui-ripple-white">Blog</a>
+            <a href="#stats" class="mdui-ripple mdui-ripple-white">Stats</a>
+            <a href="#status" id="tab-status" class="mdui-ripple mdui-ripple-white">Site Status</a>
+            <a href="#about" class="mdui-ripple mdui-ripple-white">About</a>
+        </div>
+    </header>
+    <div class="mdui-container">
+        <div class="mdui-col-md-center">
+            <div id="home" class="mdui-card mdui-col-sm-9">
+                <!-- <div class="mdui-card-primary">
+                    <span class="mdui-card-primary-title">Hello World!</span>
+                </div> -->
+                <div class="mdui-card-content" style="font-size: 115%;">
+                    <h3 align="center">👋 Hello! I'm Ren Baoshuo.</h3>
+                    <p align="center">
+                        <a href="https://baoshuo.ren">Website</a>&nbsp;•&nbsp;
+                        <a href="https://baoshuo.blog">Blog</a>&nbsp;•&nbsp;
+                        <a href="https://twitter.com/renbaoshuo">Twitter</a>&nbsp;•&nbsp;
+                        <a href="https://github.com/renbaoshuo">GitHub</a>&nbsp;•&nbsp;
+                        <a href="https://gitee.com/renbaoshuo">Gitee</a>&nbsp;•&nbsp;
+                        <a href="https://t.me/baoshuo">Telegram</a>
+                    </p>
+                    <p id="baoshuo-age" align="center" style="display: none;"></p>
+                </div>
+            </div>
+            <div id="blog" class="mdui-card mdui-col-sm-9">
+                <div class="mdui-card-content" style="font-size: 115%;">
+                    <h3 id="blog-posts">Blog Posts</h3>
+                    <p>Only the latest <strong>5</strong> articles are displayed here.</p>
+
+                    <ul id="blog-posts-list">
+                        <li>Loading...</li>
+                    </ul>
+                    <p>
+                        <strong>See more on <a href="https://baoshuo.blog">baoshuo.blog</a>.</strong>
+                    </p>
+                </div>
+            </div>
+            <div id="stats" class="mdui-card mdui-col-sm-9">
+                <!-- <div class="mdui-card-primary">
+                    <span class="mdui-card-primary-title">Hello World!</span>
+                </div> -->
+                <div class="mdui-card-content" style="font-size: 115%;">
+                    <div class="mdui-card mdui-shadow-4">
+                        <div class="mdui-card-header">
+                            <img class="mdui-card-header-avatar" src="assets/img/github.png" alt="Github Avatar" />
+                            <div class="mdui-card-header-title">Github Stats</div>
+                            <div class="mdui-card-header-subtitle">renbaoshuo</div>
+                        </div>
+                        <div class="mdui-card-media">
+                            <img class="github-stats-info" id="github-stats-info"
+                                src="https://github-readme-stats.vercel.app/api?username=renbaoshuo&show_icons=true&count_private=true&hide_title=true" />
+                            <!-- <img class="github-lang" id="github-lang"
+                                src="https://github-readme-stats.vercel.app/api/top-langs/?username=renbaoshuo&layout=compact"> -->
+                        </div>
+                        <!-- 卡片的按钮 -->
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple" href="https://github.com/renbaoshuo"
+                                target="_blank">More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdui-card-content" style="font-size: 115%;">
+                    <div class="mdui-card mdui-shadow-4">
+                        <div class="mdui-card-header">
+                            <img class="mdui-card-header-avatar" src="assets/img/luogu.png" alt="Github Avatar" />
+                            <div class="mdui-card-header-title">Luogu Stats</div>
+                            <div class="mdui-card-header-subtitle">宝硕</div>
+                        </div>
+                        <div class="mdui-card-media">
+                            <img class="luogu-stats-info" id="luogu-stats-info"
+                                src="https://luogu.vercel.app/api?id=168214&hide_title=true" />
+                        </div>
+                        <!-- 卡片的按钮 -->
+                        <div class="mdui-card-actions">
+                            <a class="mdui-btn mdui-ripple" href="https://www.luogu.com.cn/user/168214"
+                                target="_blank">More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="status" class="mdui-card mdui-col-sm-9">
+                <!-- <div class="mdui-card-primary">
+                    <span class="mdui-card-primary-title">Hello World!</span>
+                </div> -->
+                <div class="mdui-card-content" style="font-size: 115%;">
+                    <!-- Auto Fill -->
+                </div>
+            </div>
+            <div id="about" class="mdui-card mdui-col-sm-9">
+                <!-- <div class="mdui-card-primary">
+                    <span class="mdui-card-primary-title">Hello World!</span>
+                </div> -->
+                <div class="mdui-card-content" style="font-size: 115%;">
+                    TODO
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        if ($(document).width() < 600) {
+            $('#tab-status').hide();
+        }
+        var stats_card = {
+            github: {
+                light: {
+                    stats: 'https://github-readme-stats.vercel.app/api?username=renbaoshuo&show_icons=true&count_private=true&hide_title=true',
+                    lang: 'https://github-readme-stats.vercel.app/api/top-langs/?username=renbaoshuo&layout=compact'
+                },
+                dark: {
+                    stats: 'https://github-readme-stats.vercel.app/api/?username=renbaoshuo&show_icons=true&count_private=true&hide_title=true&title_color=fff&icon_color=03a9f4&text_color=fff&bg_color=424242',
+                    lang: 'https://github-readme-stats.vercel.app/api/top-langs/?username=renbaoshuo&layout=compact&show_icons=true&title_color=fff&icon_color=03a9f4&text_color=fff&bg_color=424242'
+                }
+            },
+            luogu: {
+                light: {
+                    solve: 'https://luogu.vercel.app/api?id=168214&hide_title=true'
+                },
+                dark: {
+                    solve: 'https://luogu.vercel.app/api?id=168214&hide_title=true&dark_mode=true'
+                }
+            }
+        }
+        if (new Date().getHours() <= 6 || new Date().getHours() >= 19) {
+            if (!$('body').hasClass('mdui-theme-layout-dark')) {
+                changeTheme();
+            }
+        }
+        function changeTheme() {
+            if ($('body').hasClass('mdui-theme-layout-dark')) {
+                $('body').removeClass('mdui-theme-layout-dark');
+                $('body').addClass('mdui-theme-layout-light');
+                $('img#github-stats-info').attr('src', stats_card.github.light.stats);
+                // $('img#github-lang').attr('src', stats_card.github.light.lang);
+                $('img#luogu-stats-info').attr('src', stats_card.luogu.light.solve);
+                return;
+            }
+            $('body').removeClass('mdui-theme-layout-light');
+            $('body').removeClass('mdui-theme-layout-auto');
+            $('body').addClass('mdui-theme-layout-dark');
+            $('img#github-stats-info').attr('src', stats_card.github.dark.stats);
+            // $('img#github-lang').attr('src', stats_card.github.dark.lang);
+            $('img#luogu-stats-info').attr('src', stats_card.luogu.dark.solve);
+            return;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
+    <script src="assets/js/xml2json.min.js"></script>
+    <script>
+        // 配置
+        window.Config = {
+            // UptimeRobot Api Keys
+            // 支持 Monitor-Specific 和 Read-Only 两只 Api Key
+            ApiKeys: [
+                "ur964137-31ef2a2f067c04b489975316"
+            ],
+
+            // 是否显示监测站点的链接
+            ShowLink: true,
+
+            // 日志天数
+            CountDays: 14,
+        };
+
+    </script>
+    <script src="assets/js/main.f7eb2f41.js"></script>
+    <script>
+        // Blog Posts
+        $.ajax({
+            url: "https://baoshuo.blog/atom.xml",
+            type: "GET",
+            ajax: true,
+            success: function (data, status, xhr) {
+                var x2js = new X2JS();
+                var atomjson = x2js.xml2json(data);
+                var ret = "";
+                for (var i = 0; i <= 5; i++) {
+                    console.log(atomjson.feed.entry[i]);
+                    var post_time = new Date(atomjson.feed.entry[i].updated);
+                    ret += `<li><a href="${atomjson.feed.entry[i].link._href}" target="_blank">${atomjson.feed.entry[i].title.__cdata}</a>&nbsp;&nbsp;&nbsp;&nbsp;<small class="mdui-text-color-white-icon-disabled"><i>${post_time.getUTCFullYear()}-${post_time.getMonth() + 1}-${post_time.getDay()}</i></small></li>`;
+                }
+                $('#blog-posts-list').html(ret);
+            },
+            error: function (xhr, status, error) {
+                $('#blog-posts-list').html("<li>Load failed.</li><li>Please visit <a href=\"https://baoshuo.blog\">baoshuo.blog</a></li>");
+            }
+        });
+        // Birthday
+        var birth = { year: 2006, month: 06, day: 04 };
+        document.getElementById('baoshuo-age').innerHTML = ("I'm&nbsp;<b>" + (((new Date().getUTCMonth() + 1) >= birth.month) ? (new Date().getUTCDate() >= birth.day ? (new Date().getUTCFullYear()) - birth.year : (new Date().getUTCFullYear()) - birth.year - 1) : (new Date().getUTCFullYear()) - birth.year - 1) + "</b>&nbsp;years&nbsp;old&nbsp;now." + (((new Date().getUTCMonth() + 1 == birth.month) && (new Date().getUTCDate() == birth.day)) ? "<br><b style=\"color: #dc143c;\"><small>Today is my birthday!</small></b>" : ""));
+        document.getElementById('baoshuo-age').style.display = 'block';
+    </script>
+</body>
+
+</html>
